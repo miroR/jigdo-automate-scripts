@@ -1,0 +1,12 @@
+mkdir -p d-1 ; mount Old/debian-testing-amd64-DVD-1.iso d-1
+mkdir -p d-2 ; mount Old/debian-testing-amd64-DVD-2.iso d-2
+mkdir -p d-3 ; mount Old/debian-testing-amd64-DVD-3.iso d-3
+mkdir -p d-4 ; mount Old/debian-testing-amd64-DVD-4.iso d-4
+mkdir -p d-5 ; mount Old/debian-testing-amd64-DVD-5.iso d-5
+mkdir -p d-6 ; mount Old/debian-testing-amd64-DVD-6.iso d-6
+mkdir -p d-7 ; mount Old/debian-testing-amd64-DVD-7.iso d-7
+mkdir -p d-8 ; mount Old/debian-testing-amd64-DVD-8.iso d-8
+mkdir -p d-9 ; mount Old/debian-testing-amd64-DVD-9.iso d-9
+mkdir -p d-10 ; mount Old/debian-testing-amd64-DVD-10.iso d-10
+mkdir -p d-11 ; mount Old/debian-testing-amd64-DVD-11.iso d-11
+mkdir -p d-12 ; mount Old/debian-testing-amd64-DVD-12.iso d-12

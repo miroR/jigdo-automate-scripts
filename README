@@ -1,0 +1,125 @@
+After download of these in a single empty dir, where you have room enough
+to download/for already (the previous week) downloaded jigdo ISO files, of
+these:
+run_CMD_02.sh
+jigdo-dl_01-jigdo-templ-t.sh
+jigdo-dl_02-mnt-t.sh
+jigdo-dl_03-dLo-SUMS.sh
+jigdo-dl_04-dLo-t.sh
+iso_check-del_02.sh
+prep4iso_check-del.sh
+README
+
+you can run:
+$ chmod 755 *.sh
+
+on them, to make them executable.
+
+The only one that is best be moved in the /usr/local/bin/ is:
+
+run_CMD_02.sh
+
+because you can use it for many sorts of repetitive tasks.
+
+Let's say that empty dir we mentioned at the top is /home/me/Debian/ (pls.
+replace me with your username, such as that if your user name is ukrainian, you
+get /home/ukrainian/Debian/.
+
+Now create just the directory:
+/home/me/Debian/Old/
+
+and if you have the last week's or last month's jigdo testing ISO files, put
+them in:
+/home/me/Debian/Old/
+
+Connect to internet (we who try and apply basic anti-surveillance to keep our
+lives private from secret services wholesale unwarranted surveillance only
+connect when we need, and don't keep online unnecessarily) now, and run, first:
+
+./jigdo-dl_01-jigdo-templ-t.sh
+
+which will get you all the templates (in case there is ISO 13 or later out
+added, add a line that downloads it/them as well).
+
+As root run:
+./jigdo-dl_02-mnt-t.sh
+
+It will mount the ISOs from the Old dir appropriately. You need to have a
+kernel that can create sufficient number of loop devices. The Grsecurity
+patched kernel that I occasionally post for download on www.CroatiaFidelis.hr
+is adequately configured in that respect as well. Pls., again see my
+tip/tutorial on forums.debian.net "Grsecurity/Pax installation on Debian
+GNU/Linux", again, if I'm not kicked out for my strong criticism for their
+inadequate/false protection of users wrt freedom/privacy which is only achieved
+through genuine security.
+
+This, then:
+
+./jigdo-dl_03-dLo-SUMS.sh
+
+will download the checksums. We'll use just MD5SUMS. The sums are anyway not
+digitally signed by Debian Engineering Team, so why complicate when nothing to
+really verify the GNU Privacy Guard way. Great if GNU/Linux Debian team decided
+to digitally sign the weekly sums from some time to come, I wish!
+
+./jigdo-dl_04-dLo-t.sh
+
+here apply instructions that come with Jigdo, there are docs and faqs related.
+
+You don't need to run prep4iso_check-del.sh. It will be called by
+iso_check-del_02.sh.
+
+But now you will put to real use the simplest of the script that you moved into
+/usr/local/bin
+
+Here's a possible command you can decide for:
+
+As root:
+run_CMD_02.sh 10000 30 ./iso_check-del_02.sh
+
+It should check the ISO file that you downloaded and if the md5 is correct,
+overwrite the old file in Old/ of which that ISO is the updated edition, and
+it should do so for all the (in April 2014) twelve ISO files, and it will do
+so unattended. BUT READ THE WARNING BELOW.
+
+I'm not responsible it it doesn't. It works most of the time for me, but there
+I could have introduced errors that I couldn't found all out in this newly
+just revamped set of jigdo-automate-scripts.
+
+USE AT YOUR OWN RISK.
+
+Pls. refer to my Tips page Scripts to Automate Jigdo Downloads on
+forums.debian.net
+##########################################################
+And pls. report there if anyhing is wrong with the script!
+##########################################################
+
+And I hope the Debian people keep patient with me, as they have mostly shown to
+be so far, so I won't repeat the ifs again.
+
+Only this one if begs repeating. I do live in a country gone to the worst
+killers of WWII progenie, the Tito's partisans killers' children rule in my
+country's Croatia, and are unbelievably strongly and fast allying themselves
+to the worst haters and killers of Croats in the WWII that have risen to power
+in Serbia, the Chetniks' progenie who even formally tout that name.
+
+I am not safe in my country. If you don't hear/read from me (you could have
+heard from me as I used to tape my voiceover in English in many of the over 500
+--five hundred-- videos that I posted on Youtube through some five years
+time)... 
+
+If you don't hear from me in time longer then a few weeks or one, hardly two
+months, don't believe any simplistic explanation that might be proposed. They
+kill investigative journalists in the U.S. (Michael Hastings), and you think
+that Tito's worst killers' children are nice with rightwings like me?
+
+Thank you for bearing up with me. Don't forget my story!
+
+Miroslav Rovis
+www.CroatiaFidelis.hr
+www.youtube.com/user/miroR2 terminated since April 2014
+www.exDeo.com
+Vankina 4
+10000 Zagreb
++385 (0)1 660 2633	but you could only reach me if UDBA allows your
++385 (0)91 266 0202 	 call through. They're getting really sick for control.
