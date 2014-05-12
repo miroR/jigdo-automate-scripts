@@ -3,7 +3,9 @@
 # www.CroatiaFidelis.hr, the NGO founded by Miroslav Rovis, the NGO and
 # my name is to be left in here even if the traitor Regime in Croatia were to
 # strike me as they struck my friends Tomislav Dragun and Marko Francišković
-# (persecuted and tortured).
+# (persecuted and tortured). Marko has recently, thanks to pressure from
+# inside, and from EU, been freed, but Tomislav is still forgotten.
+#	 [ for pure tech stuff, feel free to skip some 15 more lines. ]
 # God forbid, but I won't keep silent on their plight like the half-hearted
 # majority and, like them, save only my skin, for time fleeting.
 # Very tellingly, it came to pass, beginning of April 2014, that, under
@@ -19,10 +21,10 @@
 # just take care not to drown in money and possessions, take good good care...
 # from what I posted on now your Youtube? Ever? Any?
 
-# We will now run the following script to create from the file MD5SUMS from
+# We will now run the following script to create from the file SHA256SUMS from
 # debian.org the files we need for our arrays below.
 # Of course it'd be nice to put this into if condition, so
-# prep4iso_check-del.sh runs only when MD5SUMS-bare and debian-DVD-list do
+# prep4iso_check-del.sh runs only when SHA256SUMS-bare and debian-DVD-list do
 # not exist, but hey, I don't have the time to care. Sorry! This, clumsily,
 # works for me.
 
@@ -30,15 +32,15 @@
 
 ./prep4iso_check-del.sh
 
-arrayMD5=(`cat MD5SUMS-bare`)
+arraySHA256=(`cat SHA256SUMS-bare`)
 arrayDebNames=(`cat debian-DVD-list`)
-LOOP=`cat MD5SUMS-bare|wc -l`
+LOOP=`cat SHA256SUMS-bare|wc -l`
 echo $LOOP ;
 for ((i=0; i < "$LOOP" ; i++ )) 
 do
  echo "$i" 
-echo ${arrayMD5[i]} ;
- iR=${arrayMD5[i]}
+echo ${arraySHA256[i]} ;
+ iR=${arraySHA256[i]}
 echo "\$iR" ;
 echo "$iR" ;
  j="${arrayDebNames[i]}"  ;

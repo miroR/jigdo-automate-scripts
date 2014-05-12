@@ -3,7 +3,9 @@
 # www.CroatiaFidelis.hr, the NGO founded by Miroslav Rovis, the NGO and
 # my name is to be left in here even if the traitor Regime in Croatia were to
 # strike me as they struck my friends Tomislav Dragun and Marko Francišković
-# (persecuted and tortured).
+# (persecuted and tortured). Marko has recently, thanks to pressure from
+# inside, and from EU, been freed, but Tomislav is still forgotten.
+#	 [ for pure tech stuff, feel free to skip some 15 more lines. ]
 # God forbid, but I won't keep silent on their plight like the half-hearted
 # majority and, like them, save only my skin, for time fleeting.
 # Very tellingly, it came to pass, beginning of April 2014, that, under
@@ -19,7 +21,7 @@
 # just take care not to drown in money and possessions, take good good care...
 # from what I posted on now your Youtube? Ever? Any?
 
-cat MD5SUMS | wc -l > linesall
+cat SHA256SUMS | wc -l > linesall
 linesall=`cat linesall` ;
 #echo $linesall
 #read FAKE ;
@@ -31,29 +33,29 @@ echo "This script will hold correctly as long as the number of Debian jigdo"
 echo "testing ISO files remains under 20, which is still a while longer :-) "
 echo "...But it's an amateur script anyway. Does the work though."
 
-cat MD5SUMS | head -1  > MD5SUMS_PART1
+cat SHA256SUMS | head -1  > SHA256SUMS_PART1
 
-#cat MD5SUMS | tail -`echo $linesall-$lines2last-1|bc`
+#cat SHA256SUMS | tail -`echo $linesall-$lines2last-1|bc`
 #read FAKE ;
-cat MD5SUMS | tail -`echo $linesall-$lines2last-1|bc` > MD5SUMS_PART2
+cat SHA256SUMS | tail -`echo $linesall-$lines2last-1|bc` > SHA256SUMS_PART2
 
-#cat MD5SUMS | tail -`echo $linesall-1|bc`|head -$lines2last
+#cat SHA256SUMS | tail -`echo $linesall-1|bc`|head -$lines2last
 #read FAKE ;
-cat MD5SUMS | tail -`echo $linesall-1|bc`|head -$lines2last > MD5SUMS_PART3
-#cat MD5SUMS_PART?
+cat SHA256SUMS | tail -`echo $linesall-1|bc`|head -$lines2last > SHA256SUMS_PART3
+#cat SHA256SUMS_PART?
 #read FAKE ;
-cat MD5SUMS_PART? > MD5SUMS_r
-echo "All this script to just sort the order of the MD5SUMS file to natural order."
+cat SHA256SUMS_PART? > SHA256SUMS_r
+echo "All this script to just sort the order of the SHA256SUMS file to natural order."
 echo "Disappointing! But I don't know better."
 echo ;
-echo "Did you notice the MD5SUMS_r text file that is now ordered?"
+echo "Did you notice the SHA256SUMS_r text file that is now ordered?"
 echo "We now have to create the text files that are now traditionally"
 echo "--in the parody mood only-- in the iso_check-del_NN.sh called: "
-echo "MD5SUMS-bare and debian-DVD-list, and which are nothing much, but"
-echo "only the first and the third column of the MD5SUMS_r file,"
+echo "SHA256SUMS-bare and debian-DVD-list, and which are nothing much, but"
+echo "only the first and the third column of the SHA256SUMS_r file,"
 
-cat MD5SUMS_r | cut -d' ' -f1 > MD5SUMS-bare
-cat MD5SUMS_r | cut -d' ' -f3 > debian-DVD-list
+cat SHA256SUMS_r | cut -d' ' -f1 > SHA256SUMS-bare
+cat SHA256SUMS_r | cut -d' ' -f3 > debian-DVD-list
 
 echo "There! Now we can run the script, which anyway called this little"
 echo "clumsy amateur helper script which is now done and out. Bye!"
