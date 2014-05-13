@@ -65,7 +65,7 @@ echo "jigdo-dl_0[234]*.sh from jigdo-dl_0[234]*-4sed.txt one-liner"
 echo "prep-templates"
 
 echo "Jigdo DVDs are now digitally signed. Let's get the key (innocuous"
-echo "error/delay if you already have the key):"
+echo "error/delay if you already have the key --else go briefly online):"
 
 gpg --recv-key 0x09EA8AC3
 
@@ -85,7 +85,7 @@ echo "basically number of DVDs, and to exactly just get the numbers for each"
 echo "DVD in one line, for our primitive sed text manipulation (did I already"
 echo "say how these scripts were bloated... but do the work?)"
 
-cat SHA256SUMS_r | cut -d'.' | cut -d'-' -f5 >> thnumbers.txt
+cat SHA256SUMS_r | cut -d'.' -f1 | cut -d'-' -f5 >> thnumbers.txt
 
 cat thnumbers.txt
 read FAKE ;
