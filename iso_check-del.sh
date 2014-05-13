@@ -30,8 +30,6 @@
 
 # NO WARRANTIES. Use at your own risk!
 
-./prep4iso_check-del.sh
-
 arraySHA256=(`cat SHA256SUMS-bare`)
 arrayDebNames=(`cat debian-DVD-list`)
 LOOP=`cat SHA256SUMS-bare|wc -l`
