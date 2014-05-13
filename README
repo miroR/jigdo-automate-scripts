@@ -119,7 +119,7 @@ and faqs related on debian.net and atterer.net.
 
 The jigdo-dl_04-dLo-t.sh, working primitively (plainly starting it for every
 single DVD to download in consecutive order) on top of jigdo-lite will now be
-downloading the DVD's that the SHA256SUMS told us the names of, and the soms
+downloading the DVD's that the SHA256SUMS told us the names of, and the sums
 of.  
 
 And now you can put to real use the simplest of the scripts that you moved into
