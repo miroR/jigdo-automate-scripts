@@ -1,12 +1,12 @@
 After download of these in a single empty dir, where you have room enough
 to download/for already (the previous week) downloaded jigdo ISO files, of
 these:
-run_CMD_02.sh
-jigdo-dl_01-jigdo-templ-t.sh
-jigdo-dl_02-mnt-t.sh
-jigdo-dl_03-dLo-SUMS.sh
-jigdo-dl_04-dLo-t.sh
-iso_check-del_02.sh
+run_CMD.sh
+jigdo-dl_01-dLo-SUMS.sh
+jigdo-dl_02-jigdo-templ-t-4sed.txt
+jigdo-dl_03-mnt-t-4sed.txt
+jigdo-dl_04-dLo-t-4sed.txt
+iso_check-del.sh
 prep4iso_check-del.sh
 README
 
@@ -17,7 +17,7 @@ on them, to make them executable.
 
 The only one that is best be moved in the /usr/local/bin/ is:
 
-run_CMD_02.sh
+run_CMD.sh
 
 because you can use it for many sorts of repetitive tasks.
 
@@ -36,13 +36,54 @@ Connect to internet (we who try and apply basic anti-surveillance to keep our
 lives private from secret services wholesale unwarranted surveillance only
 connect when we need, and don't keep online unnecessarily) now, and run, first:
 
-./jigdo-dl_01-jigdo-templ-t.sh
+./jigdo-dl_01-dLo-SUMS.sh
 
-which will get you all the templates (in case there is ISO 13 or later out
-added, add a line that downloads it/them as well).
+It will download the checksums. We'll use the SHA256SUMS. The sums are now
+digitally signed by Debian Engineering Team, so we can pretty reliably verify
+them the GNU Privacy Guard way! Not even a "daemon", but probably only God
+could falsify a SHA256 sum, but the Truth doesn't deal in any untruthfulness.
+
+Now, the other scripts are not yet really ready as they are. Read now why. It's
+because we want to learn from the SUMS how many of the DVDs are there, and we
+don't necessarily know how many there are, upfront.
+
+The ISO DVD 13, for instance, is only a recent addition to the Jigdo DVD
+collection, so my previous jigdo-automate-scripts wouldn't automatically
+neither download nor surely check them.
+
+So the:
+
+jigdo-dl_02-jigdo-templ-t-4sed.txt
+jigdo-dl_03-mnt-t-4sed.txt
+jigdo-dl_04-dLo-t-4sed.txt
+
+are just templates to make as many lines equivalent scripts out of them as
+there are DVDs to download. It'll be the business of:
+
+prep4iso_check-del.sh
+
+which will be called from:
+
+iso_check-del.sh
+
+to produce the scripts:
+
+jigdo-dl_02-jigdo-templ-t.sh
+jigdo-dl_03-mnt-t.sh
+jigdo-dl_04-dLo-t.sh
+
+and I think it will run them in this next edition too.
+
+No, it won't it the first next release of the script. I'm in a hurry with other
+problems in my life. But it will prompt you to run them when it makes them.
+
+What you will need to do is, of course, for the so much smarter people than me, improve this set of scripts so it does things more smoothly (but smarter Debianers are often too busy in much more important areas of development, I know...)...
+
+So what you will need to do is, run the:
+
 
 As root run:
-./jigdo-dl_02-mnt-t.sh
+./jigdo-dl_03-mnt-t.sh
 
 It will mount the ISOs from the Old dir appropriately. You need to have a
 kernel that can create sufficient number of loop devices. The Grsecurity
@@ -53,21 +94,13 @@ GNU/Linux", again, if I'm not kicked out for my strong criticism for their
 inadequate/false protection of users wrt freedom/privacy which is only achieved
 through genuine security.
 
-This, then:
-
-./jigdo-dl_03-dLo-SUMS.sh
-
-will download the checksums. We'll use just MD5SUMS. The sums are anyway not
-digitally signed by Debian Engineering Team, so why complicate when nothing to
-really verify the GNU Privacy Guard way. Great if GNU/Linux Debian team decided
-to digitally sign the weekly sums from some time to come, I wish!
 
 ./jigdo-dl_04-dLo-t.sh
 
 here apply instructions that come with Jigdo, there are docs and faqs related.
 
 You don't need to run prep4iso_check-del.sh. It will be called by
-iso_check-del_02.sh.
+iso_check-del.sh.
 
 But now you will put to real use the simplest of the script that you moved into
 /usr/local/bin
@@ -75,7 +108,7 @@ But now you will put to real use the simplest of the script that you moved into
 Here's a possible command you can decide for:
 
 As root:
-run_CMD_02.sh 10000 30 ./iso_check-del_02.sh
+run_CMD.sh 10000 30 ./iso_check-del.sh
 
 It should check the ISO file that you downloaded and if the md5 is correct,
 overwrite the old file in Old/ of which that ISO is the updated edition, and

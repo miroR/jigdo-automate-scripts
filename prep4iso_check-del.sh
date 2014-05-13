@@ -106,6 +106,5 @@ read FAKE ;
 cat jigdo-dl_04-dlo-t.sh
 read FAKE ;
 
-echo "There! Now we can run the script, which anyway called this little"
-echo "clumsy amateur helper script which is now done and out. Bye!"
-echo "(( Back to the main script that called me ))"
+echo "There! The scripts nesessary to run iso_check-del.sh should have been"
+echo "created."
