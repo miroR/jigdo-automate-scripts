@@ -96,8 +96,8 @@ chmod 755 jigdo-dl_02-jigdo-templ-t.sh
 for i in `cat thnumbers.txt` ; do sed "s/thnumber/$i/g" jigdo-dl_03-mnt-t-4sed.txt >> jigdo-dl_03-mnt-t.sh ; done ;
 chmod 755 jigdo-dl_03-mnt-t.sh
 
-sed 's/ --noask//' jigdo-dl_04-dlo-t-4sed.txt > jigdo-dl_04-dlo-t-4sed-do-ask.txt
-sed "s/thnumber/$i/g" jigdo-dl_04-dlo-t-4sed-do-ask.txt > jigdo-dl_04-dlo-t.sh
+sed 's/ --noask//' jigdo-dl_04-dLo-t-4sed.txt > jigdo-dl_04-dLo-t-4sed-do-ask.txt
+sed "s/thnumber/$i/g" jigdo-dl_04-dLo-t-4sed-do-ask.txt > jigdo-dl_04-dLo-t.sh
 
 cat thnumbers.txt|wc -l >thnumbers_wc_l
 thnum=`cat thnumbers_wc_l`
@@ -105,14 +105,14 @@ echo "$thnum-1"|bc >thnumbers_wc_l_1
 thnum_min1=`cat thnumbers_wc_l_1`
 echo $thnum_min1
 read FAKE ;
-for i in `cat thnumbers.txt|tail -$thnum_min1` ; do sed "s/thnumber/$i/g" jigdo-dl_04-dlo-t-4sed.txt >> jigdo-dl_04-dlo-t.sh ; done ;
-chmod 755 jigdo-dl_04-dlo-t.sh
+for i in `cat thnumbers.txt|tail -$thnum_min1` ; do sed "s/thnumber/$i/g" jigdo-dl_04-dLo-t-4sed.txt >> jigdo-dl_04-dLo-t.sh ; done ;
+chmod 755 jigdo-dl_04-dLo-t.sh
 
 cat jigdo-dl_02-jigdo-templ-t.sh
 read FAKE ;
 cat jigdo-dl_03-mnt-t.sh
 read FAKE ;
-cat jigdo-dl_04-dlo-t.sh
+cat jigdo-dl_04-dLo-t.sh
 read FAKE ;
 
 echo "There! All the nesessary scripts should have been created."
