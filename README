@@ -45,6 +45,9 @@ DVDs, and that is planned for the future (most users don't need sources, so
 it's less important to include those). Surely for them, the names will be same
 but for the '-s' instead.
 
+Best is you read the entire README first, and then just go back for [1], [2]
+through to the last number and run them.
+
 Connect to internet (we who try and apply basic anti-surveillance to keep our
 lives private from secret services wholesale unwarranted surveillance only
 connect when we need, and don't keep online unnecessarily) now, and run, first:
@@ -55,15 +58,15 @@ connect when we need, and don't keep online unnecessarily) now, and run, first:
 It will download the checksums. We'll use the SHA256SUMS. The sums are now
 digitally signed by Debian Engineering Team, so we can pretty reliably verify
 them the GNU Privacy Guard way! Not even a "daemon", but probably only God
-could falsify a SHA256 sum, but the Truth doesn't deal in any untruthfulness.
+can falsify a SHA256 sum, but the Truth doesn't deal in any untruthfulness.
 
 Now, the other scripts are not yet really ready as they are. Here's why. It's
 because we want to learn from the SUMS how many of the DVDs there are; we just
 don't necessarily know how many there are, upfront.
 
 The ISO DVD 13, for instance, is only a recent addition to the Jigdo DVD
-collection, so my previous jigdo-automate-scripts, which used static scripts
-here, for won't of a better word, couldn't automatically neither download nor
+collection, so my previous jigdo-automate-scripts, which used, for wont of a
+better word, static scripts here, couldn't automatically neither download nor
 surely check the 13th DVD.
 
 So the:
@@ -84,7 +87,7 @@ jigdo-dl_02-jigdo-templ-t.sh
 jigdo-dl_03-mnt-t.sh
 jigdo-dl_04-dLo-t.sh
 
-you can now run some of them, only some, the ones with the quick jobs to do.
+you can now run the ones with the quick job to do.
 
 [3]
 ./jigdo-dl_02-jigdo-templ-t.sh
@@ -100,6 +103,12 @@ tip/tutorial on forums.debian.net "Grsecurity/Pax installation on Debian
 GNU/Linux", again, if I'm not kicked out for my strong criticism for their
 inadequate/false protection of users wrt freedom/privacy which is only achieved
 through genuine security.
+
+To check that all the last weeks DVDs are mounted, you can issue:
+$ mount
+here, which needs to return to you all of them mounted. If not, go back, and
+see what you did wrong, or report to the forums if something is wrong with the
+scripts.
 
 [5] (Back to the terminal where you are regular user)
 ./jigdo-dl_04-dLo-t.sh
