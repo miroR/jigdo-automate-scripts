@@ -128,7 +128,7 @@ into directory, just add './' in front of its name).
 
 Here's a possible command you can decide for:
 
-As root:
+[6] As root:
 run_CMD.sh 10000 30 ./iso_check-del.sh
 
 It should check the ISO file that you downloaded and if the sha256 sum is
