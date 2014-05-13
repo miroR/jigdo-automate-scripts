@@ -96,7 +96,7 @@ chmod 755 jigdo-dl_02-jigdo-templ-t.sh
 for i in `cat thnumbers.txt` ; do sed "s/thnumber/$i/g" jigdo-dl_03-mnt-t-4sed.txt >> jigdo-dl_03-mnt-t.sh ; done ;
 chmod 755 jigdo-dl_03-mnt-t.sh
 
-sed 's/ --noask//' jigdo-dl_04-dLo-t-4sed.txt > jigdo-dl_04-dLo-t-4sed-do-ask.txt
+sed 's/ --noask//' jigdo-dl_04-dLo-t-4sed.txt|head -1 > jigdo-dl_04-dLo-t-4sed-do-ask.txt
 sed "s/thnumber/$i/g" jigdo-dl_04-dLo-t-4sed-do-ask.txt > jigdo-dl_04-dLo-t.sh
 
 cat thnumbers.txt|wc -l >thnumbers_wc_l
