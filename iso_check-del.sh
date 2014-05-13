@@ -46,7 +46,7 @@ echo "$iR" ;
  j="${arrayDebNames[i]}"  ;
 echo "\$j" ;
 echo "$j" ;
- jR=`md5sum $j|cut -d ' ' -f 1` ;
+ jR=`sha256sum $j|cut -d ' ' -f 1` ;
 echo "\$jR" ;
 echo "$jR" ;
 # read FAKE ;
