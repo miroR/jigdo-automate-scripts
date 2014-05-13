@@ -97,7 +97,7 @@ for i in `cat thnumbers.txt` ; do sed "s/thnumber/$i/g" jigdo-dl_03-mnt-t-4sed.t
 chmod 755 jigdo-dl_03-mnt-t.sh
 
 cat jigdo-dl_04-dLo-t-4sed.txt|head -1 | sed 's/ --noask//'> jigdo-dl_04-dLo-t-4sed-do-ask.txt
-sed "s/thnumber/$i/g" jigdo-dl_04-dLo-t-4sed-do-ask.txt > jigdo-dl_04-dLo-t.sh
+for i in `cat thnumbers.txt|head -1` ; do sed "s/thnumber/$i/g" jigdo-dl_04-dLo-t-4sed-do-ask.txt > jigdo-dl_04-dLo-t.sh ; done ;
 
 cat thnumbers.txt|wc -l >thnumbers_wc_l
 thnum=`cat thnumbers_wc_l`
