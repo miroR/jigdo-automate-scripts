@@ -3,7 +3,9 @@
 # www.CroatiaFidelis.hr, the NGO founded by Miroslav Rovis, the NGO and
 # my name is to be left in here even if the traitor Regime in Croatia were to
 # strike me as they struck my friends Tomislav Dragun and Marko Francišković
-# (persecuted and tortured).
+# (persecuted and tortured). Marko has recently, thanks to pressure from
+# inside, and from EU, been freed, but Tomislav is still forgotten.
+#	 [ for pure tech stuff, feel free to skip some 15 more lines. ]
 # God forbid, but I won't keep silent on their plight like the half-hearted
 # majority and, like them, save only my skin, for time fleeting.
 # Very tellingly, it came to pass, beginning of April 2014, that, under
@@ -19,13 +21,13 @@
 # just take care not to drown in money and possessions, take good good care...
 # from what I posted on now your Youtube? Ever? Any?
 
-echo "This script runs a number of times (arg 1) at given intervals (arg 2)"
-echo "some task, in the form of a single command, such as a name of a script,"
-echo "or a name of a script or some command with arguments, in which case that"
-echo "entire third argument needs to be quoted (arg 3). Simple but useful in"
-echo "automating tasks such as my Script to Automate Jigdo Downloads, see"
-echo "forums.debian.net if they haven't kicked me out for my strong criticism"
-echo "of their non-debianish behavior."
+# "This script runs a number of times (arg 1) at given intervals (arg 2)"
+# "some task, in the form of a single command, such as a name of a script,"
+# "or a name of a script or some command with arguments, in which case that"
+# "entire third argument needs to be quoted (arg 3). Simple but useful in"
+# "automating tasks such as my Script to Automate Jigdo Downloads, see"
+# "forums.debian.net if they haven't kicked me out for my strong criticism"
+# "of their non-debianish behavior."
 
 LIMIT=$1
 
