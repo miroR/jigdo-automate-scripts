@@ -1,4 +1,4 @@
-A note prior you tried anything at all with these scripts.
+A note before you tried anything at all with these scripts.
 #########################################################
 # They are meant/working/written for an AMD64 install.	#
 # For other arch Testing Jigdo download, modify 	#
@@ -42,7 +42,7 @@ A note before I continue the explaining. Most of these scripts have a '-t' in
 their name. It stands for 'testing', because it's about downloading the Testing
 Jigdo DVDs. But the same procedures could as well apply to download 'sources'
 DVDs, and that is planned for the future (most users don't need sources, so
-it's less important to include those. Surely for them, the names will be same
+it's less important to include those). Surely for them, the names will be same
 but for the '-s' instead.
 
 Connect to internet (we who try and apply basic anti-surveillance to keep our

@@ -61,7 +61,7 @@ cat SHA256SUMS_r | cut -d' ' -f3 > debian-DVD-list
 
 echo "Should be fine for running the iso_check-del.sh, but we need to get the"
 echo "jigdo files and the templates first, so we need create scripts"
-echo "jigdo-dl_0[234]*.sh from jigdo-dl_0[234]*-4sed.sh one-liner"
+echo "jigdo-dl_0[234]*.sh from jigdo-dl_0[234]*-4sed.txt one-liner"
 echo "prep-templates"
 
 echo "Jigdo DVDs are now digitally signed. Let's get the key (innocuous"
@@ -90,13 +90,22 @@ cat SHA256SUMS_r | cut -d'.' | cut -d'-' -f5 >> thnumbers.txt
 cat thnumbers.txt
 read FAKE ;
 
-for i in `cat thnumbers.txt` ; do sed "s/thnumber/$i/g" jigdo-dl_02-jigdo-templ-t-4sed.sh >> jigdo-dl_02-jigdo-templ-t.sh ; done ;
+for i in `cat thnumbers.txt` ; do sed "s/thnumber/$i/g" jigdo-dl_02-jigdo-templ-t-4sed.txt >> jigdo-dl_02-jigdo-templ-t.sh ; done ;
 chmod 755 jigdo-dl_02-jigdo-templ-t.sh
 
-for i in `cat thnumbers.txt` ; do sed "s/thnumber/$i/g" jigdo-dl_03-mnt-t-4sed.sh >> jigdo-dl_03-mnt-t.sh ; done ;
+for i in `cat thnumbers.txt` ; do sed "s/thnumber/$i/g" jigdo-dl_03-mnt-t-4sed.txt >> jigdo-dl_03-mnt-t.sh ; done ;
 chmod 755 jigdo-dl_03-mnt-t.sh
 
-for i in `cat thnumbers.txt` ; do sed "s/thnumber/$i/g" jigdo-dl_04-dlo-t-4sed.sh >> jigdo-dl_04-dlo-t.sh ; done ;
+sed 's/ --noask//' jigdo-dl_04-dlo-t-4sed.txt > jigdo-dl_04-dlo-t-4sed-do-ask.txt
+sed "s/thnumber/$i/g" jigdo-dl_04-dlo-t-4sed-do-ask.txt > jigdo-dl_04-dlo-t.sh
+
+cat thnumbers.txt|wc -l >thnumbers_wc_l
+thnum=`cat thnumbers_wc_l`
+echo "$thnum-1"|bc >thnumbers_wc_l_1
+thnum_min1=`cat thnumbers_wc_l_1`
+echo $thnum_min1
+read FAKE ;
+for i in `cat thnumbers.txt|tail -$thnum_min1` ; do sed "s/thnumber/$i/g" jigdo-dl_04-dlo-t-4sed.txt >> jigdo-dl_04-dlo-t.sh ; done ;
 chmod 755 jigdo-dl_04-dlo-t.sh
 
 cat jigdo-dl_02-jigdo-templ-t.sh
@@ -106,5 +115,4 @@ read FAKE ;
 cat jigdo-dl_04-dlo-t.sh
 read FAKE ;
 
-echo "There! The scripts nesessary to run iso_check-del.sh should have been"
-echo "created."
+echo "There! All the nesessary scripts should have been created."
