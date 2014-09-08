@@ -128,8 +128,12 @@ then, sure, just, still as root, first try:
 And in case that wouldn't load anything, then you need to recompile.
 The Grsecurity patched kernel that I occasionally post for download on
 www.CroatiaFidelis.hr is adequately configured in that respect as well. Pls.,
-again see my tip/tutorial on forums.debian.net "Grsecurity/Pax installation on
-Debian GNU/Linux", again, if I'm not kicked out for my strong criticism for
+again see my tip/tutorial:
+
+Grsecurity/Pax installation on Debian GNU/Linux
+http://forums.debian.net/viewtopic.php?f=16&t=108616
+
+again, if I'm not kicked out for my strong criticism for
 their inadequate/false protection of users wrt freedom/privacy which is only
 achieved through genuine security... 
 
@@ -204,12 +208,15 @@ from github.com).
 
 USE AT YOUR OWN RISK.
 
-Pls. refer to my Tips page "Scripts to Automate Jigdo Downloads" on
-forums.debian.net
-#########################################################################
-And pls. report either there or here if anyhing is wrong with the script!
+Pls. refer to my Tips page:
+
+Scripts to Automate Jigdo Downloads
+http://forums.debian.net/viewtopic.php?f=16&t=110503
+
+##########################################################################
+And pls. report either there or here if anyhing is wrong with the scripts!
 ( But, I work slowly, be patient for replies, please! )
-#########################################################################
+##########################################################################
 
 And I hope the Debian people keep patient with me, as they have mostly shown to
 be so far, so I won't repeat the ifs again.
