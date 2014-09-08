@@ -4,11 +4,11 @@ A note before you tried anything at all with these scripts.
 # For other arch Testing Jigdo download, modify 	#
 # the scripts as necessary (probably not much work).	#
 #########################################################
-After download of these in a single empty dir, where you have room enough
-to download/for already (the previous week) downloaded jigdo ISO files, of
-these:
+After download of these in a single empty dir, where you have room enough to
+download/for already (the previous week or earlier) downloaded jigdo ISO files,
+of these:
 run_CMD.sh
-jigdo-dl_01-dLo-SUMS.sh
+jigdo-dl_01-dLo-SUMS-t.sh
 jigdo-dl_02-jigdo-templ-t-4sed.txt
 jigdo-dl_03-mnt-t-4sed.txt
 jigdo-dl_04-dLo-t-4sed.txt
@@ -19,7 +19,7 @@ README
 you can run:
 $ chmod 755 *.sh
 
-on them, to make them executable.
+on them, to make those with the .sh extension executable.
 
 The only one that is best be moved in the /usr/local/bin/ is:
 
@@ -37,6 +37,23 @@ Now create just the directory:
 and if you have the last week's or last month's jigdo testing ISO files, put
 them in:
 /home/me/Debian/Old/
+
+So that directory might look something like:
+
+total 53015476
+-rw-r--r-- 1 ukrainian ukrainian 3669200896 Jul 22 22:10 debian-testing-amd64-DVD-10.iso
+-rw-r--r-- 1 ukrainian ukrainian 4691335168 Jul 22 23:23 debian-testing-amd64-DVD-11.iso
+-rw-r--r-- 1 ukrainian ukrainian 4647268352 Jul 23 00:50 debian-testing-amd64-DVD-12.iso
+-rw-r--r-- 1 ukrainian ukrainian   98805760 Jul 23 00:54 debian-testing-amd64-DVD-13.iso
+-rw-r--r-- 1 ukrainian ukrainian 3897638912 Jul 22 10:41 debian-testing-amd64-DVD-1.iso
+-rw-r--r-- 1 ukrainian ukrainian 4698748928 Jul 22 12:08 debian-testing-amd64-DVD-2.iso
+-rw-r--r-- 1 ukrainian ukrainian 4656547840 Jul 22 13:17 debian-testing-amd64-DVD-3.iso
+-rw-r--r-- 1 ukrainian ukrainian 4559497216 Jul 22 14:17 debian-testing-amd64-DVD-4.iso
+-rw-r--r-- 1 ukrainian ukrainian 4612108288 Jul 22 15:23 debian-testing-amd64-DVD-5.iso
+-rw-r--r-- 1 ukrainian ukrainian 4699660288 Jul 22 16:28 debian-testing-amd64-DVD-6.iso
+-rw-r--r-- 1 ukrainian ukrainian 4699998208 Jul 22 17:44 debian-testing-amd64-DVD-7.iso
+-rw-r--r-- 1 ukrainian ukrainian 4657014784 Jul 22 19:13 debian-testing-amd64-DVD-8.iso
+-rw-r--r-- 1 ukrainian ukrainian 4699959296 Jul 22 20:43 debian-testing-amd64-DVD-9.iso
 
 A note before I continue the explaining. Most of these scripts have a '-t' in
 their name. It stands for 'testing', because it's about downloading the Testing
@@ -96,16 +113,53 @@ you can now run the ones with the quick job to do.
 ./jigdo-dl_03-mnt-t.sh
 
 It will mount the ISOs from the Old dir appropriately. You need to have a
-kernel that can create sufficient number of loop devices. The Grsecurity
-patched kernel that I occasionally post for download on www.CroatiaFidelis.hr
-is adequately configured in that respect as well. Pls., again see my
-tip/tutorial on forums.debian.net "Grsecurity/Pax installation on Debian
-GNU/Linux", again, if I'm not kicked out for my strong criticism for their
-inadequate/false protection of users wrt freedom/privacy which is only achieved
-through genuine security.
+kernel that can create sufficient number of loop devices.
 
-To check that all the last weeks DVDs are mounted, you can issue:
+And even then if, say, the loop module is not loaded, which you will know if
+you get, upon running the script:
+
+mount: Could not find any loop device. Maybe this kernel does not know
+       about the loop device? (If so, recompile or `modprobe loop'.)
+
+then, sure, just, still as root, first try:
+
+# modprobe loop
+
+And in case that wouldn't load anything, then you need to recompile.
+The Grsecurity patched kernel that I occasionally post for download on
+www.CroatiaFidelis.hr is adequately configured in that respect as well. Pls.,
+again see my tip/tutorial on forums.debian.net "Grsecurity/Pax installation on
+Debian GNU/Linux", again, if I'm not kicked out for my strong criticism for
+their inadequate/false protection of users wrt freedom/privacy which is only
+achieved through genuine security... 
+
+UPDATE: Arrgghh! I did soften my criticism a bit, but why is there still not
+room there in official Debian kernel for Grsecurity?...
+
+So that command ( ./jigdo-dl_03-mnt-t.sh ), should eventually run fine and your
+a while ago empty directory should now look like:
+
+# ls -ld */
+dr-xr-xr-x 1 root      root      4096 Jul 21 08:48 d-1/
+dr-xr-xr-x 1 root      root      2048 Jul 21 08:51 d-10/
+dr-xr-xr-x 1 root      root      2048 Jul 21 08:54 d-11/
+dr-xr-xr-x 1 root      root      2048 Jul 21 08:56 d-12/
+dr-xr-xr-x 1 root      root      2048 Jul 21 08:59 d-13/
+dr-xr-xr-x 1 root      root      2048 Jul 21 08:59 d-2/
+dr-xr-xr-x 1 root      root      2048 Jul 21 09:01 d-3/
+dr-xr-xr-x 1 root      root      2048 Jul 21 09:04 d-4/
+dr-xr-xr-x 1 root      root      2048 Jul 21 09:06 d-5/
+dr-xr-xr-x 1 root      root      2048 Jul 21 09:09 d-6/
+dr-xr-xr-x 1 root      root      2048 Jul 21 09:10 d-7/
+dr-xr-xr-x 1 root      root      2048 Jul 21 09:12 d-8/
+dr-xr-xr-x 1 root      root      2048 Jul 21 09:14 d-9/
+drwxr-xr-x 2 ukrainian ukrainian 4096 Jul 24 10:42 Old/
+ 
+And those d-[1-9] and d-1[1-3] or more should be the DVDs from the Old/
+mounted. To check that all the last weeks DVDs are mounted, you can issue:
+
 $ mount
+
 here, which needs to return to you all of them mounted. If not, go back, and
 see what you did wrong, or report to the forums if something is wrong with the
 scripts.
@@ -117,10 +171,10 @@ Here instructions apply that come with Jigdo, the program that is much more
 complex than this set of scripts, authored by Richard Atterer, there are docs
 and faqs related on debian.net and atterer.net.
 
-The jigdo-dl_04-dLo-t.sh, working primitively (plainly starting it for every
-single DVD to download in consecutive order) on top of jigdo-lite will now be
-downloading the DVD's that the SHA256SUMS told us the names of, and the sums
-of.  
+The jigdo-dl_04-dLo-t.sh, working primitively on top of jigdo-lite (plainly
+starting jigdo-lite for every single DVD to download in consecutive order) will
+now be downloading the DVD's that the SHA256SUMS told us the names of, and the
+sums of.  
 
 And now you can put to real use the simplest of the scripts that you moved into
 /usr/local/bin (the run_CMD.sh; if you didn't, you can run it from the cd'ed
@@ -131,23 +185,31 @@ Here's a possible command you can decide for:
 [6] As root:
 run_CMD.sh 10000 30 ./iso_check-del.sh
 
-It should check the ISO file that you downloaded and if the sha256 sum is
-correct, overwrite the old file in Old/ of which that ISO is the updated
-edition, and it should do so for all the (in May 2014) thirteen ISO files, or
-greater/smaller number of DVDs in the future, and it will do so unattended. BUT
-READ THE WARNING BELOW.
+The 10000 is just a really big number that would suffice if someone has a
+really really slow connection. This batch of scripts is anyway not as advanced
+as allowing you to program it to, say, shut you computer on completion. It will
+allow you to, however, to start jigdo downloads, go to sleep, look it up in the
+morning, all done, and stop the scripts by issuing Ctrl-C where necessary. 
+
+The command ./iso_check-del.sh should check the ISO file that you downloaded
+and if the sha256 sum is correct, overwrite the old file in Old/ of which that
+ISO is the updated edition, and it should do so for all the (in September 2014)
+thirteen ISO files, or greater/smaller number of DVDs in the future, and it
+will do so unattended. BUT READ THE WARNING BELOW.
 
 I'm not responsible it it doesn't. It works most of the time for me, but there
-I could have introduced errors that I couldn't found all out in this newly
-just revamped (and pushed to github,com) set of jigdo-automate-scripts.
+I could have introduced errors that I couldn't found all out in your version of
+jigdo-automate-scripts (the recommended version is usually the master branch
+from github.com).
 
 USE AT YOUR OWN RISK.
 
 Pls. refer to my Tips page "Scripts to Automate Jigdo Downloads" on
 forums.debian.net
-##########################################################
-And pls. report there if anyhing is wrong with the script!
-##########################################################
+#########################################################################
+And pls. report either there or here if anyhing is wrong with the script!
+( But, I work slowly, be patient for replies, please! )
+#########################################################################
 
 And I hope the Debian people keep patient with me, as they have mostly shown to
 be so far, so I won't repeat the ifs again.
